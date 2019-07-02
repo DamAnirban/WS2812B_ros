@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import serial #Serial imported for Serial communication
-import time #Required to use delay functions
+import time 
 import rospy
 from geometry_msgs.msg import Twist
-x = 1.0
-y= -1.0
 ArduinoSerial = serial.Serial('/dev/ttyACM0',9600)
 time.sleep(2)
+x = 1.0
+y = -1.0
 
 def callback(msg):
     rospy.loginfo("Received a /cmd_vel message!")
@@ -27,12 +27,9 @@ def callback(msg):
         time.sleep(0.01)
 
     else :
-	ArduinoSerial.write('5') #send 0
+	ArduinoSerial.write('5') #send 5
         print ("Straight")
         time.sleep(0.01)
-    # Do velocity processing here:
-    # Use the kinematics of your robot to map linear and angular velocities into motor commands
-
 
 def listener():
     rospy.init_node('cmd_vel_listener')
