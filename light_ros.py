@@ -14,7 +14,7 @@ def callback(msg):
     rospy.loginfo("Angular Components: [%f, %f, %f]"%(msg.angular.x, msg.angular.y, msg.angular.z))
 
     var = float(msg.angular.z)
-    print ("YOU ENTERED", var) 
+    print ("ANGULAR", var) 
 
     if (var > x): 
         ArduinoSerial.write('1') #send 1
