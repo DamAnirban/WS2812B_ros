@@ -16,12 +16,12 @@ def callback(msg):
     var = float(msg.angular.z)
     print ("YOU ENTERED", var) 
 
-    if (var > x): #if the value is 1
+    if (var > x): 
         ArduinoSerial.write('1') #send 1
         print ("CLOCKWISE")
         time.sleep(0.01)
 
-    elif (var < y): #if the value is 0
+    elif (var < y):
         ArduinoSerial.write('0') #send 0
         print ("ANTICLOCK")
         time.sleep(0.01)
